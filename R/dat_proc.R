@@ -27,3 +27,10 @@ streamsMWR <- st_read('~/Desktop/NHD_MA/NHDFlowline_fcode_46006_vis_101k_noattr.
  select(dLevel)
 
 save(streamsMWR, file = here('data/streamsMWR.RData'))
+
+sudburyMWR <- st_read(
+  '~/Desktop/Sudbury_watershed_singleboundary/Sudbury_watershed_singleboundary.shp'
+ ) %>%
+ st_zm()
+
+save(sudburyMWR, file = 'data/sudburyMWR.RData')
