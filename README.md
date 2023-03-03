@@ -19,9 +19,9 @@ See [R/dat_proc.R](https://github.com/massbays-tech/MassWateRdata/blob/main/R/da
 9.  Export each layer to new layer (with fields ObjectID, fdate, fcode, ftype, visibility)
 10. Delete duplicate geometries in each layer
 11. Remove extra ponds from Waterbody layer (see note about middle CT River watershed below)
-    a.  Add pond_area field in m2
+    a.  Add pond_area field in m<sup>2</sup>
     b.  Select by location waterbodies within CTWatershed_waterbody_correction polygon
-    c.  Filter within selection waterbodies with pond_area less than 10,000 m$^2$
+    c.  Filter within selection waterbodies with pond_area less than 10,000 m<sup>2</sup>
     d.  Create a temporary clipped layer of Flowlines that intersect the correction polygon (improves performance of next step)
     e.  Remove from selection by location all waterbodies that touch Flowlines
     f.  Invert selection and export layer
@@ -35,14 +35,14 @@ NHDArea -- dLevel = 'low' NHDWaterbody and NHDFlowline: If visibility \< 500,000
 
 In the middle CT River watershed, there is a large area where visibility is set to 5,000,000 for all small ponds in the Waterbody layer. This needs to be corrected as follows:
 
-1.  Filter NHDWaterbody for dLevel = **'low'** and pond_area \<= **300,000** m$^2$
+1.  Filter NHDWaterbody for dLevel = **'low'** and pond_area \<= **300,000** m<sup>2</sup>
     -   Code: "dLevel" = 'low' AND "pond_area" \<= 300000
 2.  Select waterbodies by location within CTWatershed_waterbody_correction polygon
 3.  Filter NHDFlowline to **'low'** (use temporary clipped Flowline layer)
     -   Code: "dLevel" = 'low'
 4.  Remove from selection by location all waterbodies that touch Flowlines
 5.  Change dLevel to **'medium'** for selected waterbodies
-6.  Filter NHDWaterbody for dLevel = **'low'** and **'medium'** and pond_area \<= **85,000** m$^2$
+6.  Filter NHDWaterbody for dLevel = **'low'** and **'medium'** and pond_area \<= **85,000** m<sup>2</sup>
     -   Code: ("dLevel" = 'low' OR "dLevel" = 'medium') AND "pond_area" \<= 85000
 7.  Select waterbodies by location within CTWatershed_waterbody_correction polygon
 8.  Filter NHDFlowline to 'low' and 'medium' (use temporary clipped Flowline layer)
