@@ -31,7 +31,8 @@ See [R/dat_proc.R](https://github.com/massbays-tech/MassWateRdata/blob/main/R/da
 
 <ins>Logic for NHD dLevels</ins>
 
-NHDArea -- dLevel = 'low' 
+NHDArea -- dLevel = 'low'
+
 NHDWaterbody and NHDFlowline: 
 * If visibility \< 500,000 then dLevel = 'high' 
 * If visibility \>= 500,000 then dLevel = 'medium' 
