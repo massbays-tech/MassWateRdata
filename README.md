@@ -31,7 +31,12 @@ See [R/dat_proc.R](https://github.com/massbays-tech/MassWateRdata/blob/main/R/da
 
 <ins>Logic for NHD dLevels</ins>
 
-NHDArea -- dLevel = 'low' NHDWaterbody and NHDFlowline: If visibility \< 500,000 then dLevel = 'high' If visibility \>= 500,000 then dLevel = 'medium' If visibility \>= 1,000,000 then dLevel = 'low' *Code: if("visibility" \>= 1000000,'low', if("visibility" \>= 500000, 'medium', 'high'))*
+NHDArea -- dLevel = 'low' 
+NHDWaterbody and NHDFlowline: 
+* If visibility \< 500,000 then dLevel = 'high' 
+* If visibility \>= 500,000 then dLevel = 'medium' 
+* If visibility \>= 1,000,000 then dLevel = 'low' 
+* *Code: if("visibility" \>= 1000000,'low', if("visibility" \>= 500000, 'medium', 'high'))*
 
 In the middle CT River watershed, there is a large area where visibility is set to 5,000,000 for all small ponds in the Waterbody layer. This needs to be corrected as follows:
 
