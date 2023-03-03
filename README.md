@@ -19,12 +19,12 @@ See [R/dat_proc.R](https://github.com/massbays-tech/MassWateRdata/blob/main/R/da
 9.  Export each layer to new layer (with fields ObjectID, fdate, fcode, ftype, visibility)
 10. Delete duplicate geometries in each layer
 11. Remove extra ponds from Waterbody layer (see note about middle CT River watershed below)
-    a.  Add pond_area field in m<sup>2</sup>
-    b.  Select by location waterbodies within CTWatershed_waterbody_correction polygon
-    c.  Filter within selection waterbodies with pond_area less than 10,000 m<sup>2</sup>
-    d.  Create a temporary clipped layer of Flowlines that intersect the correction polygon (improves performance of next step)
-    e.  Remove from selection by location all waterbodies that touch Flowlines
-    f.  Invert selection and export layer
+     a.  Add pond_area field in m<sup>2</sup>
+     b.  Select by location waterbodies within CTWatershed_waterbody_correction polygon
+     c.  Filter within selection waterbodies with pond_area less than 10,000 m<sup>2</sup>
+     d.  Create a temporary clipped layer of Flowlines that intersect the correction polygon (improves performance of next step)
+     e.  Remove from selection by location all waterbodies that touch Flowlines
+     f.  Invert selection and export layer
 12. Add dLevel field per logic below
 13. Simplify all layers to 10 meters
 14. Zip the three sets of shapefiles together
