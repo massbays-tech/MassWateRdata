@@ -1,6 +1,6 @@
 # MassWateRdata
 
-Supporting data for the [MassWateR](https://massbays-tech.github.io/MassWateR/) R package, includes simplified NHD datsets to support the `anlzMWRmap()` function.
+Supporting data for the [MassWateR](https://massbays-tech.github.io/MassWateR/) R package, includes simplified NHD datasets to support the `anlzMWRmap()` function.
 
 ## Logic for creating raw shapefiles
 
