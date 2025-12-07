@@ -21,14 +21,15 @@ pondsMWR <- st_read(here('data/data-raw/FullNHDWaterbody_ftype390-493_vis101k_si
  select(dLevel)
 
 save(pondsMWR, file = here('data/pondsMWR.RData'))
-pondsMWR_geojson_string <- sf_geojson(pondsMWR, atomise = TRUE, simplify = TRUE)
+pondsMWR_geojson_string <- pondsMWR |> 
+    st_transform(crs = 4326) |> 
+  sf_geojson(simplify = TRUE)
 write(pondsMWR_geojson_string, here("data/pondsMWR.geojson"))
 put_object(
   file = here("data/pondsMWR.geojson"),
   object = 'geojson/pondsMWR.geojson',
   bucket = "masswater-data"
 )
-
 
 riversMWR <- st_read(here('data/data-raw/FullNHDArea_noattrib_simpl.shp')) %>%
  st_make_valid() %>%
@@ -37,7 +38,9 @@ riversMWR <- st_read(here('data/data-raw/FullNHDArea_noattrib_simpl.shp')) %>%
  select(dLevel)
 
 save(riversMWR, file = here('data/riversMWR.RData'))
-riversMWR_geojson_string <- sf_geojson(riversMWR, atomise = TRUE, simplify = TRUE)
+riversMWR_geojson_string <- riversMWR |> 
+  st_transform(crs = 4326) |> 
+  sf_geojson(simplify = TRUE)
 write(riversMWR_geojson_string, here("data/riversMWR.geojson"))
 put_object(
   file = here("data/riversMWR.geojson"),
@@ -52,7 +55,9 @@ streamsMWR <- st_read(here('data/data-raw/FullNHDFlowline_fcode46006_vis101k_sim
  select(dLevel)
 
 save(streamsMWR, file = here('data/streamsMWR.RData'))
-streamsMWR_geojson_string <- sf_geojson(streamsMWR, atomise = TRUE, simplify = TRUE)
+streamsMWR_geojson_string <- streamsMWR |> 
+  st_transform(crs = 4326) |> 
+  sf_geojson(simplify = TRUE)
 write(streamsMWR_geojson_string, here("data/streamsMWR.geojson"))
 put_object(
   file = here("data/streamsMWR.geojson"),
