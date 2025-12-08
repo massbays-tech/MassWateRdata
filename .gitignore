@@ -3,3 +3,4 @@
 .RData
 .Ruserdata
 data-api/.env
+masswater-data-api/.env

@@ -3,10 +3,10 @@ library(sf)
 library(jsonlite)
 
 # build docker image: 
-# docker build -t data-api .
+# docker build -t fawda123/masswater-data-api .
 
 # run locally
-# docker run -p 8000:8000 --env-file .env data-api
+# docker run -p 8000:8000 --env-file .env fawda123/masswater-data-api
 
 # to do:
 # check if .env file is absolutely necessary

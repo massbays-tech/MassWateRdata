@@ -15,8 +15,8 @@ Sys.setenv(
 # Cache for storing loaded GeoJSON files
 cache <- new.env()
 
-#* @apiTitle Spatial Data API
-#* @apiDescription API for serving GeoJSON data based on bounding box requests
+#* @apiTitle MassWater Data API
+#* @apiDescription API for serving MassWateR GeoJSON data based on bounding box requests
 
 #* Load GeoJSON from S3
 load_geojson_from_s3 <- function(file_key) {
