@@ -5,7 +5,7 @@ library(jsonlite)
 # build docker image: 
 # docker build -t fawda123/masswater-data-api .
 
-# run locally
+# run locally (or -dp to run in background)
 # docker run -p 8000:8000 --env-file .env fawda123/masswater-data-api
 
 # to do:
@@ -23,7 +23,7 @@ dat_ext <- sitdat %>%
   sf::st_bbox()
 
 # Base URL of your API
-base_url <- "http://localhost:8000"
+base_url <- "http://gooseberry.sfei.org:8000"
 
 # Test 1: Check health
 health <- GET(paste0(base_url, "/health"))
